@@ -44,13 +44,5 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
                 onUserClicked.onUserSingleClicked(user);
             }
         });
-
-        parent.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                onUserClicked.onUserLongClicked(user);
-                return true;
-            }
-        });
     }
 }

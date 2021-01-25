@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="padding_12dp">12dp</dimen>
+    <dimen name="image_dims">64dp</dimen>
+    <dimen name="name_text_size">24sp</dimen>
+    <dimen name="version_text_size">16sp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
 </resources>

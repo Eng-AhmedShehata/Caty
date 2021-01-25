@@ -11,16 +11,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ashehata.caty.R;
 
+import java.util.Collections;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private OnUserClicked onUserClicked;
+    private User removedUser;
+    private int removedUserPos;
 
     //1. define interface
     public interface OnUserClicked {
         void onUserSingleClicked(User user);
-        void onUserLongClicked(User user);
+        void onUserSwiped(int position);
         //.....
     }
 
@@ -55,5 +58,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     @Override
     public int getItemCount() {
         return users.size();
+    }
+
+    public void removeUser(int position){
+        removedUserPos = position;
+        removedUser = users.get(position);
+        users.remove(position);
+        notifyItemRemoved(position);
+    }
+
+    public void restoreUser(){
+        users.add(removedUserPos, removedUser);
+        notifyItemInserted(removedUserPos);
+    }
+
+    public void moveUser(int fromPosition, int toPosition){
+        Collections.swap(users, fromPosition, toPosition);
+        notifyItemMoved(fromPosition, toPosition);
     }
 }
