@@ -1,5 +1,6 @@
 package com.ashehata.caty.home;
 
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     private ImageView image;
     private LinearLayout parent;
 
-    public UserViewHolder(@NonNull View itemView, UserAdapter.OnUserClicked onUserClicked) {
+    public UserViewHolder(@NonNull View  itemView, UserAdapter.OnUserClicked onUserClicked) {
         super(itemView);
         parent = itemView.findViewById(R.id.parent_linear);
         title = itemView.findViewById(R.id.tv_title);

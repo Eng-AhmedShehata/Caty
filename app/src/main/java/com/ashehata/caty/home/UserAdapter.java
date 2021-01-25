@@ -11,11 +11,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ashehata.caty.R;
 
+import java.util.Collections;
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private OnUserClicked onUserClicked;
+
+    public void removeUser(int position) {
+        users.remove(position);
+        notifyDataSetChanged();
+    }
+
+    public void swapItems(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target){
+        // get the viewHolder's and target's positions in your adapter data, swap them
+        Collections.swap(users, viewHolder.getAdapterPosition(), target.getAdapterPosition());
+        // and notify the adapter that its dataset has changed
+        notifyItemMoved(viewHolder.getAdapterPosition(), target.getAdapterPosition());
+    }
 
     //1. define interface
     public interface OnUserClicked {
