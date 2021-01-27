@@ -52,5 +52,6 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
                 return true;
             }
         });
+
     }
 }
