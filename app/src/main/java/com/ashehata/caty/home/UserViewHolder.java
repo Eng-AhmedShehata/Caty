@@ -6,6 +6,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.solver.Cache;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ashehata.caty.R;
@@ -17,7 +19,7 @@ public class UserViewHolder extends RecyclerView.ViewHolder {
     private TextView title;
     private TextView des;
     private ImageView image;
-    private LinearLayout parent;
+    private CardView parent;
 
     public UserViewHolder(@NonNull View itemView, UserAdapter.OnUserClicked onUserClicked) {
         super(itemView);

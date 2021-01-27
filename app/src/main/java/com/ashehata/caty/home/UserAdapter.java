@@ -25,9 +25,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
     }
 
     //3.
-    public void registerView(OnUserClicked onUserClicked) {
-        this.onUserClicked = onUserClicked;
-    }
+//    public void registerView(OnUserClicked onUserClicked) {
+//        this.onUserClicked = onUserClicked;
+//    }
 
     private List<User> users;
     private Activity activity;
@@ -57,3 +57,5 @@ public class UserAdapter extends RecyclerView.Adapter<UserViewHolder> {
         return users.size();
     }
 }
+
+
