@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnUse
         //....
         Toast.makeText(this, user.getTitle(), Toast.LENGTH_SHORT).show();
     }
-    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,  ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             int fromPosition = viewHolder.getAdapterPosition();
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnUse
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            if(direction == ItemTouchHelper.RIGHT || direction == ItemTouchHelper.LEFT){
+            if (direction == ItemTouchHelper.RIGHT || direction == ItemTouchHelper.LEFT) {
                 onUserSwiped(viewHolder.getAdapterPosition());
             }
         }
@@ -91,4 +92,5 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnUse
                     }
                 }).show();
     }
+
 }
