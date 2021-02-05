@@ -69,8 +69,6 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnUse
     User deletedUser = null;
     List<User> archivedUser = new ArrayList<>();
 
-
-
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP
             | ItemTouchHelper.DOWN | ItemTouchHelper.START | ItemTouchHelper.END,
             ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT ) {
@@ -82,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements UserAdapter.OnUse
             recyclerView.getAdapter().notifyItemMoved(fromPosition, toPosition);
             return true;
         }
-
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
